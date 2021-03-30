@@ -1,7 +1,5 @@
 # AceBook...
 
-#Testing if Travis will deploy
-
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
