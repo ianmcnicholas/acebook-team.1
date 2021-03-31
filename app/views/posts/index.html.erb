@@ -7,10 +7,10 @@
 	<p class="message"> <%= simple_format(post.message) %> </p>
   <p><%= post.created_at.localtime.strftime 'at: %H:%M on %d-%m-%y' %></p>
   <br/>
-
+    <h6 class="btn-primary">Comments<h6>
   <% post.comments.each do |comment|%>
-    <p class="message"> <%= comment.message %> </p>
-   <p><%= post.created_at.localtime.strftime 'at: %H:%M on %d-%m-%y' %></p>
+    <p class="message"> <%= comment.message %> </p>   
+    <p> created by <%= comment.user.name %></p>
   <br/>
   <% end %>
 
@@ -20,9 +20,11 @@
       method: :delete,
       data: {confirm: "are you sure? "}, class:"btn btn-outline-danger btn-sm" %>
    <%= link_to "Update", edit_post_path(post.id), class:"btn btn-outline-primary btn-sm" %>
-  <%= link_to "Comment", new_comment_path(post_id: post.id), class:"btn btn-outline-primary btn-sm" %>  <%# add query string parameter "post_id" %>
-   
+    
    <% end %>
+   <% if user_signed_in?%>
+    <%= link_to "Comment", new_comment_path(post_id: post.id), class:"btn btn-outline-primary btn-sm" %>  <%# add query string parameter "post_id" %>
+  <% end %>
 <br>
 	<hr class="my-4"/>
 <% end %>
