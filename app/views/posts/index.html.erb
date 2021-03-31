@@ -7,6 +7,14 @@
 	<p class="message"> <%= simple_format(post.message) %> </p>
   <p><%= post.created_at.localtime.strftime 'at: %H:%M on %d-%m-%y' %></p>
   <br/>
+
+  <% post.comments.each do |comment|%>
+    <p class="message"> <%= comment.message %> </p>
+   <p><%= post.created_at.localtime.strftime 'at: %H:%M on %d-%m-%y' %></p>
+  <br/>
+  <% end %>
+
+
   <% if user_signed_in? && current_user.id == post.user[:id]%>
   <%= link_to "Delete", post_path(post.id),
       method: :delete,
