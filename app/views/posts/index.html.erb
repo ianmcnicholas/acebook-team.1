@@ -1,11 +1,11 @@
 <div class="jumbotron">
   <p class="lead">
     <% @posts.each do |post| %>
-      <div class="card post">
+      <div class="card post border border-primary">
         <div class="card-body">
-          <%= simple_format(post.message, {}, wrapper_tag: "h5") %> 
+          <%= simple_format(post.message, {}, wrapper_tag: "h5") %>
           <p class="card-text">
-            says: <%= post.user[:name] %> 
+            says: <%= post.user[:name] %>
           </p>
           <p><%= post.created_at.localtime.strftime 'at: %H:%M on %d-%m-%y' %></p>
           <br/>
@@ -13,8 +13,8 @@
             <%= link_to "Delete", post_path(post.id),
               method: :delete,
               data: {confirm: "are you sure? "}, class:"btn btn-outline-danger btn-sm" %>
-            <%= link_to "Update", edit_post_path(post.id), class:"btn btn-outline-primary btn-sm" %>  
-          <% end %> 
+            <%= link_to "Update", edit_post_path(post.id), class:"btn btn-outline-primary btn-sm" %>
+          <% end %>
           <% if user_signed_in?%>
             <%= link_to "Comment", new_comment_path(post_id: post.id), class:"btn btn-outline-primary btn-sm" %>  <%# add query string parameter "post_id" %>
           <% end %>
@@ -25,7 +25,7 @@
         <% post.comments.each do |comment|%>
           <div class="comment card">
             <div class="card-body">
-              <p class="message"> <%= simple_format(comment.message) %> </p>   
+              <p class="message"> <%= simple_format(comment.message) %> </p>
               <p> created by <%= comment.user.name %></p>
               <br/>
               <% if user_signed_in? && current_user.id == comment.user[:id]%>
@@ -36,7 +36,7 @@
               <% end %>
             </div>
           </div>
-        <% end %>    
+        <% end %>
       </div>
     <% end %>
   </p>
