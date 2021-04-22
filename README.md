@@ -3,18 +3,16 @@
 ## Heroku Deployed!
 [Click here to log onto T'Acebook via Heroku!](https://murmuring-coast-18928.herokuapp.com/)
 
+## Project Outline
 
-REQUIRED INSTRUCTIONS:
+We set out to learn Ruby on Rails by making a simple message-board WebApp. We used RSpec and Capybara to test the app and CircleCI for continuous integration and deployment to Heroku. For styling, we used Bootstrap which really sped up our workflow. We used the Devise gem to get our social feature up and running.
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
-
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+## The Team
+- [Ian McNicholas](https://github.com/ianmcnicholas)
+- [Anna Nawrocka](https://github.com/a-nawrocka)
+- [Kasey Purvor](https://github.com/kasey-purvor)
+- [Peter Allen](https://github.com/peter-james-allen)
+- [Aniruddh Ojha](https://github.com/anioji94)
 
 ## Quickstart
 
